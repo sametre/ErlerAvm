@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Form, Head } from '@inertiajs/vue3';
+import { PackageCheck } from '@lucide/vue';
 import InputError from '@/components/InputError.vue';
 import PasswordInput from '@/components/PasswordInput.vue';
 import TeamInvitationAlert from '@/components/TeamInvitationAlert.vue';
@@ -13,36 +14,37 @@ import { store } from '@/routes/register';
 import type { TeamInvitationContext } from '@/types';
 
 defineProps<{
-    passwordRules: string;
+    passwordRules?: string;
     teamInvitation?: TeamInvitationContext | null;
 }>();
 
 defineOptions({
     layout: {
-        title: 'Create an account',
-        description: 'Enter your details below to create your account',
+        title: 'ErlerAVM hesabı oluşturun',
+        description:
+            'Siparişlerinizi ve üyelik bilgilerinizi tek yerden yönetin.',
     },
 });
 </script>
 
 <template>
-    <Head title="Register" />
+    <Head title="Kayıt ol" />
 
     <TeamInvitationAlert
         v-if="teamInvitation"
         :invitation="teamInvitation"
-        action="Register"
+        action="register"
     />
 
     <Form
         v-bind="store.form()"
         :reset-on-success="['password', 'password_confirmation']"
         v-slot="{ errors, processing }"
-        class="flex flex-col gap-6"
+        class="flex flex-col gap-5"
     >
-        <div class="grid gap-6">
+        <div class="grid gap-5">
             <div class="grid gap-2">
-                <Label for="name">Name</Label>
+                <Label for="name">Ad soyad</Label>
                 <Input
                     id="name"
                     type="text"
@@ -51,48 +53,62 @@ defineOptions({
                     :tabindex="1"
                     autocomplete="name"
                     name="name"
-                    placeholder="Full name"
+                    placeholder="Adınız ve soyadınız"
                 />
                 <InputError :message="errors.name" />
             </div>
 
             <div class="grid gap-2">
-                <Label for="email">Email address</Label>
+                <Label for="phone">Telefon Numarası</Label>
+                <Input
+                    id="phone"
+                    type="tel"
+                    required
+                    :tabindex="2"
+                    autocomplete="tel"
+                    name="phone"
+                    placeholder="05XX XXX XX XX"
+                />
+                <InputError :message="errors.phone" />
+            </div>
+
+            <div class="grid gap-2">
+                <Label for="email">E-posta adresi</Label>
                 <Input
                     id="email"
                     type="email"
                     required
-                    :tabindex="2"
+                    :tabindex="3"
                     autocomplete="email"
                     name="email"
-                    placeholder="email@example.com"
+                    placeholder="ornek@erleravm.com"
                 />
                 <InputError :message="errors.email" />
             </div>
 
             <div class="grid gap-2">
-                <Label for="password">Password</Label>
+                <Label for="password">Şifre</Label>
                 <PasswordInput
                     id="password"
                     required
-                    :tabindex="3"
+                    :tabindex="4"
                     autocomplete="new-password"
                     name="password"
-                    placeholder="Password"
+                    placeholder="Güçlü bir şifre belirleyin"
                     :passwordrules="passwordRules"
                 />
                 <InputError :message="errors.password" />
             </div>
 
             <div class="grid gap-2">
-                <Label for="password_confirmation">Confirm password</Label>
+                <Label for="password_confirmation">Şifre tekrarı</Label>
                 <PasswordInput
                     id="password_confirmation"
                     required
-                    :tabindex="4"
+                    :tabindex="5"
                     autocomplete="new-password"
                     name="password_confirmation"
-                    placeholder="Confirm password"
+                    placeholder="Şifrenizi tekrar yazın"
                     :passwordrules="passwordRules"
                 />
                 <InputError :message="errors.password_confirmation" />
@@ -101,17 +117,19 @@ defineOptions({
             <Button
                 type="submit"
                 class="mt-2 w-full"
-                tabindex="5"
+                tabindex="6"
                 :disabled="processing"
                 data-test="register-user-button"
             >
                 <Spinner v-if="processing" />
-                Create account
+                Hesap oluştur
             </Button>
         </div>
 
-        <div class="text-center text-sm text-muted-foreground">
-            Already have an account?
+        <div
+            class="rounded-md bg-muted p-3 text-center text-sm text-muted-foreground"
+        >
+            Zaten hesabınız var mı?
             <TextLink
                 :href="
                     teamInvitation
@@ -123,10 +141,10 @@ defineOptions({
                         : login()
                 "
                 class="underline underline-offset-4"
-                :tabindex="6"
+                :tabindex="7"
                 data-test="team-invitation-login-link"
             >
-                Log in
+                Giriş yapın
             </TextLink>
         </div>
     </Form>

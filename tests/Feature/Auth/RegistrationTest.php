@@ -37,12 +37,12 @@ test('new users can register', function () {
     $response = $this->post(route('register.store'), [
         'name' => 'Test User',
         'email' => 'test@example.com',
-        'password' => 'password',
-        'password_confirmation' => 'password',
+        'phone' => '05551234567',
+        'password' => 'Password123!',
+        'password_confirmation' => 'Password123!',
     ]);
 
     $this->assertAuthenticated();
 
-    $user = User::where('email', 'test@example.com')->first();
-    $response->assertRedirect(route('dashboard'));
+    $response->assertRedirect('/account');
 });

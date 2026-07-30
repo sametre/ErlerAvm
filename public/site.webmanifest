@@ -1,0 +1,23 @@
+{
+  "name": "ErlerAVM",
+  "short_name": "ErlerAVM",
+  "description": "ErlerAVM güvenli ve hızlı online alışveriş.",
+  "lang": "tr",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ed1c24",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/erleravm.png",
+      "sizes": "1254x1254",
+      "type": "image/png"
+    }
+  ]
+}

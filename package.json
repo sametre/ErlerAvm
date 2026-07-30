@@ -18,6 +18,7 @@
         "@stylistic/eslint-plugin": "^5.10.0",
         "@tailwindcss/vite": "^4.1.11",
         "@types/node": "^22.13.5",
+        "@vitejs/plugin-legacy": "^8.1.0",
         "@vitejs/plugin-vue": "^6.0.0",
         "@vue/eslint-config-typescript": "^14.3.0",
         "concurrently": "^9.0.1",
@@ -28,27 +29,42 @@
         "eslint-plugin-vue": "^9.32.0",
         "prettier": "^3.4.2",
         "prettier-plugin-tailwindcss": "^0.6.11",
+        "terser": "^5.48.0",
         "typescript": "^5.2.2",
         "typescript-eslint": "^8.23.0",
         "vite": "^8.0.0",
         "vue-tsc": "^2.2.4"
     },
     "dependencies": {
+        "@heroicons/vue": "^2.2.0",
         "@inertiajs/vite": "^3.0.0",
         "@inertiajs/vue3": "^3.0.0",
         "@laravel/passkeys": "^0.2.0",
-        "@lucide/vue": "^1.17.0",
+        "@lucide/vue": "^1.23.0",
+        "@tanstack/vue-table": "^8.21.3",
+        "@tiptap/extension-image": "^3.29.0",
+        "@tiptap/extension-link": "^3.29.0",
+        "@tiptap/starter-kit": "^3.29.0",
+        "@tiptap/vue-3": "^3.29.0",
+        "@types/three": "^0.185.0",
         "@vueuse/core": "^12.8.2",
+        "apexcharts": "^5.15.2",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "laravel-vite-plugin": "^3.0.0",
+        "pinia": "^3.0.4",
+        "pinia-plugin-persistedstate": "^4.7.1",
         "reka-ui": "^2.9.8",
         "tailwind-merge": "^3.2.0",
         "tailwindcss": "^4.1.1",
+        "three": "^0.185.0",
+        "turkey-neighbourhoods": "^4.0.3",
         "tw-animate-css": "^1.2.5",
         "vue": "^3.5.13",
+        "vue-i18n": "^11.4.6",
         "vue-input-otp": "^0.3.2",
-        "vue-sonner": "^2.0.0"
+        "vue-sonner": "^2.0.0",
+        "vue3-apexcharts": "^1.11.1"
     },
     "optionalDependencies": {
         "@rollup/rollup-linux-x64-gnu": "4.9.5",
@@ -57,5 +73,17 @@
         "@tailwindcss/oxide-win32-x64-msvc": "^4.0.1",
         "lightningcss-linux-x64-gnu": "^1.29.1",
         "lightningcss-win32-x64-msvc": "^1.29.1"
-    }
+    },
+    "browserslist": [
+        "> 0.5%",
+        "Chrome >= 49",
+        "Edge >= 18",
+        "Firefox >= 52",
+        "Firefox ESR",
+        "Safari >= 11",
+        "iOS >= 11",
+        "Samsung >= 8",
+        "not dead",
+        "not IE 11"
+    ]
 }

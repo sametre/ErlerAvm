@@ -1,2 +1,58 @@
+# ErlerAVM crawler policy
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /sepet
+Disallow: /odeme
+Disallow: /hesabim
+Disallow: /login
+Disallow: /register
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /sepet
+Disallow: /odeme
+Disallow: /hesabim
+Disallow: /login
+Disallow: /register
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /sepet
+Disallow: /odeme
+Disallow: /hesabim
+Disallow: /login
+Disallow: /register
+
+User-agent: Slurp
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /sepet
+Disallow: /odeme
+Disallow: /hesabim
+Disallow: /login
+Disallow: /register
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /sepet
+Disallow: /odeme
+Disallow: /hesabim
+Disallow: /login
+Disallow: /register
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+
+Sitemap: https://erleravm.test/sitemap.xml

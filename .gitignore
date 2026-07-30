@@ -27,3 +27,12 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+.agents/
+.codex/
+.github/skills/
+AGENTS.md
+sqlsrv.zip
+sqlsrv_temp/
+scratch.php
+**/xcuserdata/
+**/*.xcuserstate

@@ -10,3 +10,18 @@ export function cn(...inputs: ClassValue[]) {
 export function toUrl(href: NonNullable<InertiaLinkProps['href']>) {
     return typeof href === 'string' ? href : href?.url;
 }
+
+const currencyFormatter = new Intl.NumberFormat('tr-TR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+});
+
+export function formatPrice(value: string | number) {
+    const num = typeof value === 'string' ? parseFloat(value) : value;
+
+    if (isNaN(num)) {
+        return value;
+    }
+
+    return currencyFormatter.format(num);
+}

@@ -18,6 +18,13 @@ declare module '@inertiajs/core' {
     export interface InertiaConfig {
         sharedPageProps: {
             name: string;
+            seo: {
+                siteName: string;
+                defaultTitle: string;
+                defaultDescription: string;
+                canonicalUrl: string;
+                logoUrl: string;
+            };
             auth: Auth;
             sidebarOpen: boolean;
             currentTeam: Team | null;

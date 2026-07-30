@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Form, Head } from '@inertiajs/vue3';
+import { ShieldCheck } from '@lucide/vue';
 import InputError from '@/components/InputError.vue';
-import PasskeyVerify from '@/components/PasskeyVerify.vue';
 import PasswordInput from '@/components/PasswordInput.vue';
 import TeamInvitationAlert from '@/components/TeamInvitationAlert.vue';
 import TextLink from '@/components/TextLink.vue';
@@ -17,8 +17,8 @@ import type { TeamInvitationContext } from '@/types';
 
 defineOptions({
     layout: {
-        title: 'Log in to your account',
-        description: 'Enter your email and password below to log in',
+        title: 'Hesabınıza giriş yapın',
+        description: 'ErlerAVM hesabınıza güvenli şekilde erişin.',
     },
 });
 
@@ -30,7 +30,7 @@ defineProps<{
 </script>
 
 <template>
-    <Head title="Log in" />
+    <Head title="Giriş yap" />
 
     <div
         v-if="status"
@@ -42,20 +42,18 @@ defineProps<{
     <TeamInvitationAlert
         v-if="teamInvitation"
         :invitation="teamInvitation"
-        action="Log in"
+        action="login"
     />
-
-    <PasskeyVerify />
 
     <Form
         v-bind="store.form()"
         :reset-on-success="['password']"
         v-slot="{ errors, processing }"
-        class="flex flex-col gap-6"
+        class="flex flex-col gap-5"
     >
-        <div class="grid gap-6">
+        <div class="grid gap-5">
             <div class="grid gap-2">
-                <Label for="email">Email address</Label>
+                <Label for="email">E-posta adresi</Label>
                 <Input
                     id="email"
                     type="email"
@@ -64,21 +62,21 @@ defineProps<{
                     autofocus
                     :tabindex="1"
                     autocomplete="email"
-                    placeholder="email@example.com"
+                    placeholder="ornek@erleravm.com"
                 />
                 <InputError :message="errors.email" />
             </div>
 
             <div class="grid gap-2">
                 <div class="flex items-center justify-between">
-                    <Label for="password">Password</Label>
+                    <Label for="password">Şifre</Label>
                     <TextLink
                         v-if="canResetPassword"
                         :href="request()"
                         class="text-sm"
                         :tabindex="5"
                     >
-                        Forgot password?
+                        Şifremi unuttum
                     </TextLink>
                 </div>
                 <PasswordInput
@@ -87,7 +85,7 @@ defineProps<{
                     required
                     :tabindex="2"
                     autocomplete="current-password"
-                    placeholder="Password"
+                    placeholder="Şifreniz"
                 />
                 <InputError :message="errors.password" />
             </div>
@@ -95,24 +93,26 @@ defineProps<{
             <div class="flex items-center justify-between">
                 <Label for="remember" class="flex items-center space-x-3">
                     <Checkbox id="remember" name="remember" :tabindex="3" />
-                    <span>Remember me</span>
+                    <span>Beni hatırla</span>
                 </Label>
             </div>
 
             <Button
                 type="submit"
-                class="mt-4 w-full"
+                class="mt-2 w-full"
                 :tabindex="4"
                 :disabled="processing"
                 data-test="login-button"
             >
                 <Spinner v-if="processing" />
-                Log in
+                Giriş yap
             </Button>
         </div>
 
-        <div class="text-center text-sm text-muted-foreground">
-            Don't have an account?
+        <div
+            class="rounded-md bg-muted p-3 text-center text-sm text-muted-foreground"
+        >
+            Hesabınız yok mu?
             <TextLink
                 :href="
                     register({
@@ -124,7 +124,7 @@ defineProps<{
                 :tabindex="5"
                 data-test="register-link"
             >
-                Sign up
+                Üye olun
             </TextLink>
         </div>
     </Form>

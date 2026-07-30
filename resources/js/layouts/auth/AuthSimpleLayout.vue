@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import AppLogoIcon from '@/components/AppLogoIcon.vue';
+import BrandLogo from '@/components/brand/BrandLogo.vue';
+import StorefrontHeader from '@/components/storefront/StorefrontHeader.vue';
+import StorefrontFooter from '@/components/storefront/StorefrontFooter.vue';
 import { home } from '@/routes';
 
 defineProps<{
@@ -10,34 +12,36 @@ defineProps<{
 </script>
 
 <template>
-    <div
-        class="flex min-h-svh flex-col items-center justify-center gap-6 bg-background p-6 md:p-10"
-    >
-        <div class="w-full max-w-sm">
-            <div class="flex flex-col gap-8">
-                <div class="flex flex-col items-center gap-4">
+    <div class="flex min-h-svh flex-col bg-[#f7f7f8] text-foreground">
+        <StorefrontHeader />
+
+        <main
+            class="relative flex flex-1 flex-col items-center justify-center overflow-hidden p-6 py-16 md:p-10"
+        >
+            <!-- Decorative background elements -->
+            <div
+                class="absolute top-0 left-1/2 -z-10 h-[400px] w-[800px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl"
+            ></div>
+
+            <div
+                class="w-full max-w-[420px] rounded-3xl border border-white/50 bg-white/80 p-8 shadow-2xl shadow-slate-200/50 backdrop-blur-xl"
+            >
+                <div class="mb-8 flex flex-col items-center gap-6">
                     <Link
                         :href="home()"
-                        class="flex flex-col items-center gap-2 font-medium"
+                        class="group flex flex-col items-center gap-2 font-medium"
                     >
                         <div
-                            class="mb-1 flex h-9 w-9 items-center justify-center rounded-md"
+                            class="rounded-2xl border border-slate-100 bg-white p-3 shadow-sm transition-transform group-hover:scale-105 group-active:scale-95"
                         >
-                            <AppLogoIcon
-                                class="size-9 fill-current text-[var(--foreground)] dark:text-white"
-                            />
+                            <BrandLogo compact class="size-12" />
                         </div>
-                        <span class="sr-only">{{ title }}</span>
                     </Link>
-                    <div class="space-y-2 text-center">
-                        <h1 class="text-xl font-medium">{{ title }}</h1>
-                        <p class="text-center text-sm text-muted-foreground">
-                            {{ description }}
-                        </p>
-                    </div>
                 </div>
                 <slot />
             </div>
-        </div>
+        </main>
+
+        <StorefrontFooter />
     </div>
 </template>
