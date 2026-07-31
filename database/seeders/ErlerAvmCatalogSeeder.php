@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\StorefrontBanner;
@@ -181,49 +182,91 @@ class ErlerAvmCatalogSeeder extends Seeder
 
     private function seedProducts(): void
     {
+        Product::query()->whereIn('sku', [
+            'ERL-TEL-X1-128',
+            'ERL-BEYAZ-BZD-520',
+            'ERL-MOB-KLT-MOD',
+        ])->delete();
+
         $products = [
             [
-                'category' => 'Akıllı Telefonlar',
-                'name' => 'Erler AVM Akıllı Telefon X1 128 GB',
-                'sku' => 'ERL-TEL-X1-128',
-                'price' => '18999.00',
-                'compare_at_price' => '20999.00',
+                'brand' => 'Arçelik',
+                'category' => 'Çamaşır Makinesi',
+                'name' => 'Arçelik 9100 M 9 kg Çamaşır Makinesi',
+                'sku' => 'ARC-9100-M',
+                'price' => '25999.00',
+                'compare_at_price' => '28999.00',
                 'stock_quantity' => 12,
-                'short_description' => 'Günlük kullanım, kamera ve uzun pil performansı için güçlü akıllı telefon.',
-                'description' => '128 GB depolama, yüksek çözünürlüklü ekran ve hızlı şarj desteğiyle mağaza ve online alışverişte öne çıkan akıllı telefon seçeneği.',
-                'images' => ['/erleravm1.png'],
+                'short_description' => '9 kg kapasite, 1000 devir ve buhar destekli yıkama teknolojisi.',
+                'description' => 'ProSmart Inverter motor, 15 program ve çamaşır ekleme özelliğiyle günlük yıkama ihtiyaçları için geliştirilmiştir.',
+                'images' => ['/images/products/arcelik-9100-m.webp'],
             ],
             [
+                'brand' => 'Arçelik',
+                'category' => 'Bulaşık Makinesi',
+                'name' => 'Arçelik 6144 Bulaşık Makinesi',
+                'sku' => 'ARC-6144',
+                'price' => '22499.00',
+                'compare_at_price' => '24999.00',
+                'stock_quantity' => 8,
+                'short_description' => '14 kişilik kapasite, HijyenMax ve ekstra kurutma fonksiyonu.',
+                'description' => 'Dört ana program, yarım yük yıkama ve 48 dBA ses seviyesiyle pratik ve hijyenik bulaşık bakımı sunar.',
+                'images' => ['/images/products/arcelik-6144.webp'],
+            ],
+            [
+                'brand' => 'Bosch',
                 'category' => 'Buzdolabı',
-                'name' => 'Erler AVM No-Frost Buzdolabı 520 LT',
-                'sku' => 'ERL-BEYAZ-BZD-520',
-                'price' => '32999.00',
-                'compare_at_price' => '35999.00',
-                'stock_quantity' => 7,
-                'short_description' => 'Geniş hacimli, enerji tasarruflu no-frost buzdolabı.',
-                'description' => 'Aile kullanımı için geniş iç hacim, no-frost soğutma ve sessiz çalışma özellikleriyle mutfak ihtiyaçlarını karşılar.',
-                'images' => ['/erleravm2.png'],
+                'name' => 'Bosch Serie 4 KGN56XIE0N No Frost Buzdolabı',
+                'sku' => 'BSH-KGN56XIE0N',
+                'price' => '59990.00',
+                'compare_at_price' => '68250.00',
+                'stock_quantity' => 6,
+                'short_description' => '193 × 70 cm, VitaFresh ve Total No Frost teknolojisi.',
+                'description' => 'Ayarlanabilir cam raflar, BigBox dondurucu çekmecesi ve LED aydınlatmayla geniş, düzenli saklama alanı sağlar.',
+                'images' => ['/images/products/bosch-kgn56xie0n.webp'],
             ],
             [
-                'category' => 'Koltuk Takımları',
-                'name' => 'Erler AVM Modern Koltuk Takımı',
-                'sku' => 'ERL-MOB-KLT-MOD',
-                'price' => '44999.00',
-                'compare_at_price' => '49999.00',
-                'stock_quantity' => 5,
-                'short_description' => 'Salonlar için modern, konforlu ve şık koltuk takımı.',
-                'description' => 'Dayanıklı kumaş, ergonomik oturum ve modern çizgilerle ev yaşam alanlarını tamamlayan koltuk takımı.',
-                'images' => ['/erleravm3.png'],
+                'brand' => 'Bosch',
+                'category' => 'Çamaşır Makinesi',
+                'name' => 'Bosch Serie 4 WGA142ZXTR Çamaşır Makinesi',
+                'sku' => 'BSH-WGA142ZXTR',
+                'price' => '32990.00',
+                'compare_at_price' => '36990.00',
+                'stock_quantity' => 9,
+                'short_description' => '9 kg kapasite, 1200 devir ve EcoSilence Drive motor.',
+                'description' => 'SpeedPerfect, Allergy Plus ve yeniden yükleme fonksiyonlarıyla sessiz ve esnek yıkama deneyimi sunar.',
+                'images' => ['/images/products/bosch-wga142zxtr.webp'],
+            ],
+            [
+                'brand' => 'Bosch',
+                'category' => 'Bulaşık Makinesi',
+                'name' => 'Bosch Serie 4 SMS4IKW62T Bulaşık Makinesi',
+                'sku' => 'BSH-SMS4IKW62T',
+                'price' => '31490.00',
+                'compare_at_price' => '34990.00',
+                'stock_quantity' => 10,
+                'short_description' => '6 program, Home Connect ve VarioSpeed desteği.',
+                'description' => 'Uzaktan kontrol, sıcak ön yıkama ve favori program özellikleriyle günlük bulaşık bakımını kolaylaştırır.',
+                'images' => ['/images/products/bosch-sms4ikw62t.webp'],
             ],
         ];
 
         foreach ($products as $product) {
             $category = Category::query()->where('slug', Str::slug($product['category']))->first();
+            $brand = Brand::query()->updateOrCreate(
+                ['slug' => Str::slug($product['brand'])],
+                [
+                    'name' => $product['brand'],
+                    'status' => 'published',
+                    'description' => $product['brand'].' beyaz eşya ürünleri.',
+                ],
+            );
 
             Product::query()->updateOrCreate(
                 ['sku' => $product['sku']],
                 [
                     'category_id' => $category?->id,
+                    'brand_id' => $brand->id,
                     'name' => $product['name'],
                     'slug' => Str::slug($product['name']),
                     'price' => $product['price'],
