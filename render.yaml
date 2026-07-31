@@ -23,9 +23,9 @@ services:
       - key: ASSET_URL
         value: https://erleravm-aptus0.onrender.com
       - key: API_DOMAIN
-        value: erleravm-aptus0.onrender.com
+        value: api.erleravm-aptus0.onrender.com
       - key: API_URL
-        value: https://erleravm-aptus0.onrender.com/api
+        value: https://api.erleravm-aptus0.onrender.com
       - key: ADMIN_DOMAIN
         value: erleravm-aptus0.onrender.com
       - key: ADMIN_URL
