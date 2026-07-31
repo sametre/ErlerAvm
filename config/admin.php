@@ -5,6 +5,11 @@ $appHost = parse_url($appUrl, PHP_URL_HOST) ?: 'erleravm.test';
 $appScheme = parse_url($appUrl, PHP_URL_SCHEME) ?: 'http';
 $adminDomain = (string) env('ADMIN_DOMAIN', 'dashboard.'.$appHost);
 
+// Domain-scoped admin routes must never shadow the public storefront homepage.
+if ($adminDomain === $appHost) {
+    $adminDomain = 'dashboard.'.$appHost;
+}
+
 return [
     'domain' => $adminDomain,
     'url' => (string) env('ADMIN_URL', $appScheme.'://'.$adminDomain),

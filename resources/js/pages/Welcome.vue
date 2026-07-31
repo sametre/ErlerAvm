@@ -85,12 +85,12 @@ const props = defineProps<{
 const DEFAULT_HERO_BANNERS: Banner[] = [
     {
         placement: 'home_hero',
-        title: 'Karacabey’in Premium Alışveriş Noktası',
+        title: 'Evinizin Teknolojisini Yenileyin',
         subtitle:
-            'Mobilya, teknoloji, beyaz eşya ve daha fazlası tek çatı altında.',
-        cta_label: 'Keşfet',
-        cta_url: '/arama',
-        image_path: '/images/banners/erler-premium-alisveris.png',
+            'Yeni nesil beyaz eşyalarda seçili modeller ve ErlerAVM güvencesi.',
+        cta_label: 'Ürünleri Keşfet',
+        cta_url: '/kategori/beyaz-esya-ev-elektronigi',
+        image_path: '/images/banners/erler-ev-teknolojileri-2026.webp',
     },
     {
         placement: 'home_hero',
@@ -98,16 +98,16 @@ const DEFAULT_HERO_BANNERS: Banner[] = [
         subtitle: 'Modern salon takımları, dekorasyon ve konfor bir arada.',
         cta_label: 'Mobilyaları İncele',
         cta_url: '/arama?q=Mobilya',
-        image_path: '/images/banners/erler-mobilya-siklik.png',
+        image_path: '/images/banners/erler-yasam-alani-2026.webp',
     },
     {
         placement: 'home_hero',
-        title: 'Teknoloji ve Beyaz Eşya Dünyası',
+        title: 'Akıllı Yaşam, Güçlü Teknoloji',
         subtitle:
-            'Yeni nesil elektronik, küçük ev aletleri ve avantajlı seçenekler.',
-        cta_label: 'Ürünleri Gör',
-        cta_url: '/arama?q=Teknoloji',
-        image_path: '/images/banners/erler-teknoloji-beyaz-esya.png',
+            'Eğlence ve akıllı ev teknolojileriyle yaşam alanınıza enerji katın.',
+        cta_label: 'Teknolojiyi İncele',
+        cta_url: '/kategori/teknoloji-elektronik',
+        image_path: '/images/banners/erler-akilli-teknoloji-2026.webp',
     },
     {
         placement: 'home_hero',

@@ -5,6 +5,12 @@ $appHost = parse_url($appUrl, PHP_URL_HOST) ?: 'erleravm.test';
 $appScheme = parse_url($appUrl, PHP_URL_SCHEME) ?: 'http';
 $apiDomain = (string) env('API_DOMAIN', 'api.'.$appHost);
 
+// Keep the storefront route isolated even if a deployment accidentally points
+// API_DOMAIN at the public application host.
+if ($apiDomain === $appHost) {
+    $apiDomain = 'api.'.$appHost;
+}
+
 return [
     'domain' => $apiDomain,
     'url' => (string) env('API_URL', $appScheme.'://'.$apiDomain),
