@@ -50,6 +50,6 @@ class BlogPost extends Model
 
     public function getUrlAttribute(): string
     {
-        return route('blog.show', ['post' => $this->slug]);
+        return route('blog.show', ['post' => $this->slug], false);
     }
 }

@@ -24,6 +24,6 @@ class Brand extends Model
 
     public function getUrlAttribute(): string
     {
-        return route('brands.show', ['brand' => $this->slug]);
+        return route('brands.show', ['brand' => $this->slug], false);
     }
 }

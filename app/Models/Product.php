@@ -79,7 +79,7 @@ class Product extends Model
     {
         return route('products.show', [
             'product' => $this->slug.'-'.$this->public_id,
-        ]);
+        ], false);
     }
 
     /**

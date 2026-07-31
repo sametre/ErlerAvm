@@ -33,6 +33,7 @@ test('product urls use seo slug and public ulid instead of database ids', functi
     ]);
 
     expect($product->url)
+        ->toStartWith('/urun/')
         ->toContain('/urun/samsung-galaxy-s25-ultra-'.$product->public_id)
         ->not->toContain('/'.$product->id);
 

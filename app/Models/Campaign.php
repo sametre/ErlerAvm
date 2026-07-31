@@ -25,6 +25,6 @@ class Campaign extends Model
     {
         return route('campaigns.show', [
             'campaign' => $this->slug.'-'.$this->public_id,
-        ]);
+        ], false);
     }
 }

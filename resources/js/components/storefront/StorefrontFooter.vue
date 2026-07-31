@@ -392,20 +392,22 @@ function submitNewsletter(): void {
                     >
                         {{ $t('footer.instagram') }}
                     </h3>
-                    <div
-                        class="relative flex h-[240px] items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-white"
+                    <a
+                        href="https://www.instagram.com/p/C_q8-HxoZ_T/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group flex h-[240px] flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl border border-zinc-800 bg-gradient-to-br from-fuchsia-700 via-rose-600 to-amber-400 p-8 text-center text-white shadow-lg"
                     >
-                        <!-- Instagram iframe için genel embed URL -->
-                        <iframe
-                            src="https://www.instagram.com/p/C_q8-HxoZ_T/embed"
-                            width="100%"
-                            height="320"
-                            frameborder="0"
-                            scrolling="no"
-                            allowtransparency="true"
-                            class="absolute -top-[10px]"
-                        ></iframe>
-                    </div>
+                        <span class="text-4xl font-black">Instagram</span>
+                        <span class="text-sm font-semibold text-white/90">
+                            ErlerAVM paylaşımlarını görüntüle
+                        </span>
+                        <span
+                            class="rounded-full bg-white px-5 py-2 text-xs font-black text-rose-600 transition-transform group-hover:scale-105"
+                        >
+                            Gönderiye Git
+                        </span>
+                    </a>
                 </section>
             </div>
 
@@ -437,13 +439,13 @@ function submitNewsletter(): void {
                     </div>
                 </div>
 
-                <!-- Ödeme Logoları (Orijinal CDN'ler) -->
+                <!-- Ödeme Logoları -->
                 <div class="flex flex-wrap items-center justify-center gap-4">
                     <div
                         class="flex h-12 w-20 items-center justify-center rounded-lg bg-white shadow-sm transition-transform hover:-translate-y-1"
                     >
                         <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
+                            src="/images/banks/visa.png"
                             alt="Visa"
                             class="h-6 w-auto object-contain"
                         />
@@ -452,7 +454,7 @@ function submitNewsletter(): void {
                         class="flex h-12 w-20 items-center justify-center rounded-lg bg-white shadow-sm transition-transform hover:-translate-y-1"
                     >
                         <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg"
+                            src="/images/banks/mastercard.svg"
                             alt="Mastercard"
                             class="h-7 w-auto object-contain"
                         />
@@ -461,7 +463,7 @@ function submitNewsletter(): void {
                         class="flex h-12 w-20 items-center justify-center rounded-lg bg-white shadow-sm transition-transform hover:-translate-y-1"
                     >
                         <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/8/87/TROY_logo.svg"
+                            src="/images/banks/troy.svg"
                             alt="Troy"
                             class="h-6 w-auto object-contain"
                         />
@@ -469,11 +471,9 @@ function submitNewsletter(): void {
                     <div
                         class="flex h-12 w-20 items-center justify-center rounded-lg bg-[#006fcf] shadow-sm transition-transform hover:-translate-y-1"
                     >
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
-                            alt="American Express"
-                            class="h-8 w-auto object-contain"
-                        />
+                        <span class="text-sm font-black tracking-tight text-white">
+                            AMERICAN<br />EXPRESS
+                        </span>
                     </div>
                     <div
                         class="flex h-12 w-20 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 shadow-sm transition-transform hover:-translate-y-1"
