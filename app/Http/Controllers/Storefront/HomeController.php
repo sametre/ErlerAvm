@@ -25,7 +25,7 @@ class HomeController extends Controller
             'brands' => Brand::query()
                 ->where('status', 'published')
                 ->orderBy('name')
-                ->limit(16)
+                ->limit(12)
                 ->get(['name', 'slug', 'description'])
                 ->map(fn (Brand $brand) => [
                     'name' => $brand->name,
@@ -50,7 +50,7 @@ class HomeController extends Controller
                 ->where('status', 'published')
                 ->whereNotNull('published_at')
                 ->latest('published_at')
-                ->limit(12)
+                ->limit(16)
                 ->get(['public_id', 'category_id', 'brand_id', 'name', 'slug', 'price', 'compare_at_price', 'stock_quantity', 'images'])
                 ->map(fn (Product $product) => [
                     'name' => $product->name,
