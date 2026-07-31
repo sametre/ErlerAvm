@@ -1,5 +1,7 @@
 # ErlerAVM
 
+**Canlı demo:** [https://aptus0.github.io/ErlerAvm/](https://aptus0.github.io/ErlerAvm/)
+
 ErlerAVM; Laravel, Inertia.js ve Vue ile geliştirilen kapsamlı bir e-ticaret platformudur. Proje; modern mağaza vitrini, ürün ve stok yönetimi, sipariş süreçleri, ödeme entegrasyonları, müşteri hesapları, yönetim paneli, mobil uygulama ve güvenli API altyapısını tek sistemde birleştirir.
 
 ## Ekran Görüntüleri
@@ -51,4 +53,3 @@ Uygulamayı çalıştırmadan önce `.env` dosyasında veritabanı ve kullanıla
 ## Güvenlik
 
 Gerçek kimlik bilgileri ve üretim anahtarları depoya dahil edilmez. Ödeme entegrasyonları varsayılan olarak test veya devre dışı yapılandırmayla sunulur.
-
