@@ -44,5 +44,5 @@ COPY --chmod=755 docker/start.sh /usr/local/bin/start-erleravm
 RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs \
     && chown -R www-data:www-data storage bootstrap/cache
 
-EXPOSE 80
+EXPOSE 10000
 CMD ["start-erleravm"]
