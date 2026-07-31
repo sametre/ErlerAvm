@@ -27,9 +27,9 @@ services:
       - key: API_URL
         value: https://api.erleravm-aptus0.onrender.com
       - key: ADMIN_DOMAIN
-        value: erleravm-aptus0.onrender.com
+        value: dashboard.erleravm-aptus0.onrender.com
       - key: ADMIN_URL
-        value: https://erleravm-aptus0.onrender.com
+        value: https://dashboard.erleravm-aptus0.onrender.com
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_URL
