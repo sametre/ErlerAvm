@@ -2,6 +2,14 @@
 
 **Canlı demo:** [https://aptus0.github.io/ErlerAvm/](https://aptus0.github.io/ErlerAvm/)
 
+## Laravel Canlı Demo Dağıtımı
+
+Uygulamanın Laravel + Inertia/Vue sürümü Docker ve PostgreSQL ile Render'a dağıtılabilir:
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/aptus0/ErlerAvm)
+
+Blueprint; veritabanını oluşturur, Vite varlıklarını derler, migration ve katalog seed işlemlerini çalıştırır. Ödeme servisleri demo ortamında test/devre dışı modunda tutulur.
+
 ErlerAVM; Laravel, Inertia.js ve Vue ile geliştirilen kapsamlı bir e-ticaret platformudur. Proje; modern mağaza vitrini, ürün ve stok yönetimi, sipariş süreçleri, ödeme entegrasyonları, müşteri hesapları, yönetim paneli, mobil uygulama ve güvenli API altyapısını tek sistemde birleştirir.
 
 ## Ekran Görüntüleri

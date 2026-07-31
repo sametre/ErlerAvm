@@ -65,9 +65,11 @@ export default defineConfig(({ mode }) => {
                     },
                 },
             }),
-            wayfinder({
-                formVariants: true,
-            }),
+            env.SKIP_WAYFINDER_GENERATE !== 'true'
+                ? wayfinder({
+                      formVariants: true,
+                  })
+                : null,
         ],
     };
 });

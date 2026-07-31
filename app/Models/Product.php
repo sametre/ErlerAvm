@@ -37,13 +37,13 @@ class Product extends Model
 
     protected static function booted(): void
     {
-        static::saved(fn ($product) => Cache::tags(['products', 'product_'.$product->id])->flush());
-        static::deleted(fn ($product) => Cache::tags(['products', 'product_'.$product->id])->flush());
+        static::saved(fn () => Cache::forget('products.home'));
+        static::deleted(fn () => Cache::forget('products.home'));
     }
 
     public static function getCachedHomeProducts()
     {
-        return Cache::tags(['products'])->remember('products.home', 3600, function () {
+        return Cache::remember('products.home', 3600, function () {
             return self::where('status', 'published')->latest()->take(10)->get();
         });
     }
