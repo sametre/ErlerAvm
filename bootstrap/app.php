@@ -27,7 +27,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->redirectGuestsTo(fn (Request $request): string => $request->getHost() === config('api.domain')
-            ? route('developer.portal')
+            ? (string) config('api.url')
             : route('login'));
 
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
