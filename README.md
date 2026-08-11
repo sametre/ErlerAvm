@@ -1,12 +1,12 @@
 # ErlerAVM
 
-**Canlı demo:** [https://aptus0.github.io/ErlerAvm/](https://aptus0.github.io/ErlerAvm/)
+**Canlı demo:** [https://sametre.github.io/ErlerAvm/](https://sametre.github.io/ErlerAvm/)
 
 ## Laravel Canlı Demo Dağıtımı
 
 Uygulamanın Laravel + Inertia/Vue sürümü Docker ve PostgreSQL ile Render'a dağıtılabilir:
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/aptus0/ErlerAvm)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/sametre/ErlerAvm)
 
 Blueprint; veritabanını oluşturur, Vite varlıklarını derler, migration ve katalog seed işlemlerini çalıştırır. Ödeme servisleri demo ortamında test/devre dışı modunda tutulur.
 
